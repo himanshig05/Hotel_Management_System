@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--css links-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="css/index.css">
+    <!--js links-->
+    <script src="../js/bootstrap_bundle.js"></script>
+    <script type="module" src="../js/sweetalert.js"></script>
+
+    <title>Profile</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md bg-dark fixed-top navbar-light">
+        <div class="container-fluid">
+            <!--<img src="../Black and Gold Elegant Hotel Logo.png and Gold Elegant Hotel Logo.png" class="rounded-circle" width="60"  alt="icon">-->
+            
+            <a href="#"class=" fw-bold mx-4 navbar-brand">
+                Hotel Management System
+           
+            </a>
+            <br>
+            <button class="navbar-toggler" data-bs-toggle="collapse"  data-bs-target="#Menu">
+                <span class="navbar-toggler-icon"></span>
+            </button><br>
+            <div class="navbar-collapse collapse" id="Menu">
+                <ul class="navbar-nav w-100 justify-content-end">
+
+                    <div class="input-group ">
+                        <input id = "search-form" type="search" class="form control" placeholder="Search by name,email,room no.">
+                        <span class="input-text   fw-bold "> <button class="actionbtn mx-5 text-white fw-bold">Search</button></span>
+                    </div>
+               <button class="actionbtn btn-outline-light logout-btn mx-5 text-white fw-bold" >Logout</button>    
+                    
+                    
+                </ul>
+            </div>
+
+
+        </div>
+    </nav>
+    <br><br><br>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <!--nav-tab-->
+                <ul class="nav nav-tabs">
+                    <li class="nav-item" >
+                        <a href="#booking" class="nav-link active  " data-bs-toggle="tab" >Booking</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#in-house" class = 'nav-link ' data-bs-toggle="tab"  >In House</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#cashier" class = 'nav-link ' data-bs-toggle="tab"  >Cashier</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#archive" class = 'nav-link ' data-bs-toggle="tab"  >Archive</a>
+                    </li>
+                </ul>
+                <!--Nav panels-->
+                <div class="tab-content">
+                    <div class="tab-pane active container mt-3 active" id="booking">
+                      <div class="row mt-5 mb-5">
+                        <div class="col-md-4 text-center">
+                            <button
+                            data-bs-toggle="modal"
+                            data-bs-target="#registration-modal"
+                             class="actionbtn text-white px-5 fw-bold">Register</button>
+                        </div>
+                        <div class="col-md-4 text-center"><button class="actionbtn text-white px-5 fw-bold">Print</button></div>
+                        <div class="col-md-4 text-center"><button class="actionbtn text-white px-5 fw-bold">Total bookings</button></div>
+                      </div>
+                      <div>
+                        <h1>All Booking Data</h1>
+                        <table class="table  table-striped text-center ">
+                            <thead>
+                                <tr>
+                                    <th>Sr</th>
+                                    <th>Location</th>
+                                    <th>Room No.</th>
+                                    <th>Full Name</th>
+                                    <th>Check-In </th>
+                                    <th>Check-Out </th>
+                                    <th>Total People </th>
+                                    <th>Mobile</th>
+                                    <th>Price</th>
+                                    <th>Notice</th>
+                                    <th>Registered At</th>
+                                    <th>Action</th>
+                                    
+
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <td>1</td>
+                                <td>Himanshi</td>
+                                <td>15</td>
+                                <td>Mumbai</td>
+                                <td>31-12-2024</td>
+                                <td>01-01-2025</td>
+                                <td>1</td>
+                                <td>999999</td>
+                                <td>2000</td>
+                                <td>-</td>
+                                <td>29-12-2024</td>
+                                <td><button class="btn p-1 px-1 btn-primary">
+                                    <i class="fa fa-edit "></i>
+                                </button>
+                                <button class="btn p-1 px-1 text-white btn-info">
+                                    <i class="fa fa-check"></i></button >
+                                    <button class="btn p-1 px-1 btn-danger"> <i class="fa fa-trash" ></i></button>
+                                </td>
+                            </tr>    
+                           
+                            </tbody>
+
+                        </table>
+                      </div>
+                      
+                        
+                    
+                        
+                   
+                </div>
+
+            </div>
+          
+        </div>
+    </div>
+    <!--modal coding-->
+    <div class="modal animate__animated animate__zoomIn" id="registration-modal">
+        <div class="modal-dialog modal-lg ">
+            <div class="modal-content modal-center">
+                <div class="modal-header">
+                    <h4>Registration Form</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="body-body p-4">
+                    <form class="booking-form">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <input name="roomno" type="text" class="mb-3 form-control" placeholder="Room No.">
+                            </div>
+                            <div class="col-md-6">
+                                <input name="total" type="text" class="mb-3 form-control" placeholder="Total People">
+                            </div>
+                        </div>
+                        <div class="row mb-3" >
+                            <div class="col-md-6">
+                                <input name="fullname" type="text" class="mb-3 form-control" placeholder="Name">
+                            </div>
+                            <div class="col-md-6">
+                                <input name="location" type="text" class="mb-3 form-control" placeholder="Location">
+                            </div>
+                        </div>
+                        <div class="row mb-3" >
+                            <div class="col-md-6">
+                                <label>Check In </label>
+                                <input name="datein" type="date" class="mb-3 form-control" >
+                            </div>
+                            <div class="col-md-6">
+                                <label>Check Out </label>
+                                <input name="dateout" type="date" class="mb-3 form-control" >
+                            </div>
+                        </div>
+                        <div class="row mb-3" >
+                            <div class="col-md-6">
+                                <input name="price" type="number" class="mb-3 form-control" placeholder="Price">
+                            </div>
+                            <div class="col-md-6">
+                                <input name="mobile" type="number" class="mb-3 form-control" placeholder="Mobile">
+                            </div>
+                            
+                        </div>
+                        <div class="row mb-3" >
+                            <textarea name="notice" class="form-control" placeholder="Notice">
+
+                            </textarea>
+                            </div>
+                            <div class="row mb-3" >
+                                <button type="submit" class="btn actionbtn fw-bold text-white">Register</button>
+                                <button type="button" class="btn d-none btn-danger fw-bold text-white">Update</button>
+                                </div>    
+
+
+                    </form>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+
+    <script src="js/profile.js"></script>
+</body>
+</html>
